@@ -8,7 +8,15 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Link data-testid="shopping-cart-button" to="/carrinho"> Carrinho </Link>
+        <div id="cartButtonContainer">
+          <Link
+            data-testid="shopping-cart-button"
+            to="/carrinho"
+            id="cartButton"
+          >
+            Carrinho
+          </Link>
+        </div>
         <Route exact path="/" component={ Home } />
         <Route path="/carrinho" component={ CarrinhoDeCompras } />
       </BrowserRouter>
