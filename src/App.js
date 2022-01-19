@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Paginas/Home';
 import CarrinhoDeCompras from './Paginas/CarrinhoDeCompras';
-// import * as api from './services/api';
 
 class App extends React.Component {
   render() {
