@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import CategoryList from '../Componentes/CategoryList';
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <BrowserRouter>
         <CategoryList />
         <input type="text" />
         <h3
@@ -12,7 +13,7 @@ export default class Home extends Component {
         >
           Digite algum termo de pesquisa ou escolha uma categoria.
         </h3>
-      </div>
+      </BrowserRouter>
     );
   }
 }
