@@ -24,10 +24,11 @@ export default class CategoryList extends Component {
   render() {
     const { categories } = this.state;
     return (
-      <div>
+      <div className="categoryContainer">
         {
           categories.map((category) => (
             <label
+              className="categoryItem"
               htmlFor={ category.name }
               key={ category.id }
               data-testid="category"
