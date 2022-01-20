@@ -4,14 +4,9 @@
 }
 
 .categoryItem {
-  width: 24vh;
-  padding: 0.6vh;
+  border: 0.3vh solid rgb(232, 232, 232);
   margin: 0.3vh;
-  border: 0.3vh solid rgb(232,232,232)
-}
-
-#cartButtonContainer {
-  display: flex;
-  flex-direction: row-reverse;
+  padding: 0.6vh;
+  width: 24vh;
 }
 
