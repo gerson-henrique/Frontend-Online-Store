@@ -5,8 +5,6 @@ import CategoryList from '../Componentes/CategoryList';
 
 import { getProductsFromCategoryAndQuery } from '../services/api';
 
-// teste
-
 export default class Home extends Component {
   constructor() {
     super();
@@ -72,7 +70,7 @@ export default class Home extends Component {
         <main>
           <section className="card-product">
             {searchResult.map((product) => (
-              <div key={ product.id }>
+              <div key={ product.title }>
                 <ProductCard
                   key={ product.id }
                   productName={ product.title }
