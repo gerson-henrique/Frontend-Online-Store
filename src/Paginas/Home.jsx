@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from '../Componentes/ProductCard';
 import CategoryList from '../Componentes/CategoryList';
-import { getProductsFromCategoryAndQuery } from '../services/api';
 
-// teste
+import { getProductsFromCategoryAndQuery } from '../services/api';
 
 export default class Home extends Component {
   constructor() {
@@ -70,12 +70,20 @@ export default class Home extends Component {
         <main>
           <section className="card-product">
             {searchResult.map((product) => (
-              <ProductCard
-                key={ product.id }
-                productName={ product.title }
-                productImage={ product.thumbnail }
-                productPrice={ product.price }
-              />
+              <div key={ product.title }>
+                <ProductCard
+                  key={ product.id }
+                  productName={ product.title }
+                  productImage={ product.thumbnail }
+                  productPrice={ product.price }
+                />
+                <Link
+                  to={ `/item/:${product.id}` }
+                  data-testid="product-detail-link"
+                >
+                  mais
+                </Link>
+              </div>
             ))}
           </section>
         </main>
