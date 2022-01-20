@@ -63,12 +63,20 @@ export default class Home extends Component {
         <main>
           <section className="card-product">
             {searchResult.map((product) => (
-              <ProductCard
-                key={ product.id }
-                productName={ product.title }
-                productImage={ product.thumbnail }
-                productPrice={ product.price }
-              />
+              <div key={ product.id }>
+                <ProductCard
+                  key={ product.id }
+                  productName={ product.title }
+                  productImage={ product.thumbnail }
+                  productPrice={ product.price }
+                />
+                <link
+                  to={ `/item/:${product.id}` }
+                  data-testid="product-detail-link"
+                >
+                  mais
+                </link>
+              </div>
             ))}
           </section>
         </main>
