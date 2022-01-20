@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as api from '../services/api';
 
 export default class CategoryList extends Component {
@@ -22,6 +23,7 @@ export default class CategoryList extends Component {
   }
 
   render() {
+    const { onClick } = this.props;
     const { categories } = this.state;
     return (
       <div className="categoryContainer">
@@ -35,8 +37,11 @@ export default class CategoryList extends Component {
             >
               { category.name }
               <input
+                id={ category.name }
                 type="radio"
-                name={ category.name }
+                name="category"
+                value={ category.id }
+                onClick={ onClick }
               />
             </label>))
         }
@@ -44,3 +49,7 @@ export default class CategoryList extends Component {
     );
   }
 }
+
+CategoryList.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
