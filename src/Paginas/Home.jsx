@@ -11,8 +11,9 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      inputValue: '',
+      inputValue: '$QUERY',
       searchResult: [],
+      categoryID: '$CATEGORY_ID',
     };
     this.handleChange = this.handleChange.bind(this);
     this.searchQuery = this.searchQuery.bind(this);
@@ -28,8 +29,8 @@ export default class Home extends Component {
   }
 
   async searchQuery() {
-    const { inputValue } = this.state;
-    const url = await getProductsFromCategoryAndQuery(inputValue);
+    const { categoryID, inputValue } = this.state;
+    const url = await getProductsFromCategoryAndQuery(categoryID, inputValue);
     this.setState({
       searchResult: url.results,
     });
@@ -61,7 +62,13 @@ export default class Home extends Component {
         >
           Digite algum termo de pesquisa ou escolha uma categoria.
         </h3>
-        <CategoryList />
+        <CategoryList
+          onClick={ ({ target }) => {
+            this.setState({
+              categoryID: target.value,
+            }, this.searchQuery);
+          } }
+        />
         <main>
           <section className="card-product">
             {searchResult.map((product) => (
