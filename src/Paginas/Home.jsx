@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from '../Componentes/ProductCard';
 import CategoryList from '../Componentes/CategoryList';
+
 import { getProductsFromCategoryAndQuery } from '../services/api';
 
 // teste
@@ -70,12 +72,12 @@ export default class Home extends Component {
                   productImage={ product.thumbnail }
                   productPrice={ product.price }
                 />
-                <link
+                <Link
                   to={ `/item/:${product.id}` }
                   data-testid="product-detail-link"
                 >
                   mais
-                </link>
+                </Link>
               </div>
             ))}
           </section>
