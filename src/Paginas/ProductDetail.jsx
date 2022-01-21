@@ -7,10 +7,8 @@ export default class ProductDetail extends Component {
     super();
     this.state = ({
       details: [],
-      cart:[]
     });
     this.getItemDetais = this.getItemDetais.bind(this);
-    this.addCartItem = this.addCartItem.bind(this);
   }
 
   componentDidMount() {
@@ -22,13 +20,6 @@ export default class ProductDetail extends Component {
     const apiItens = await api.getProductsDetails(id);
     this.setState({
       details: apiItens,
-    });
-  }
-
-  addCartItem() {
-    const { details } = this.state;
-    this.setState({
-      cart: details,
     });
   }
 
