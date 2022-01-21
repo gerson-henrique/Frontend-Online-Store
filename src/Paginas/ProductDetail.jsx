@@ -7,8 +7,10 @@ export default class ProductDetail extends Component {
     super();
     this.state = ({
       details: [],
+      cart:[]
     });
     this.getItemDetais = this.getItemDetais.bind(this);
+    this.addCartItem = this.addCartItem.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +25,13 @@ export default class ProductDetail extends Component {
     });
   }
 
+  addCartItem() {
+    const { details } = this.state;
+    this.setState({
+      cart: details,
+    });
+  }
+
   render() {
     const { details } = this.state;
     return (
@@ -30,6 +39,13 @@ export default class ProductDetail extends Component {
         <h1 data-testid="product-detail-name">
           {details.title}
         </h1>
+        <button
+          type="button"
+          data-testid="product-detail-add-to-cart"
+          onClick={ this.addCartItem }
+        >
+          Add
+        </button>
       </div>
     );
   }
