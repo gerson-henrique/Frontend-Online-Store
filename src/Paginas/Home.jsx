@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../Componentes/ProductCard';
-import CategoryList from '../Componentes/CategoryList'; 
+import CategoryList from '../Componentes/CategoryList';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 
 export default class Home extends Component {
