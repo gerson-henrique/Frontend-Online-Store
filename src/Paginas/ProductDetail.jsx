@@ -7,8 +7,10 @@ export default class ProductDetail extends Component {
     super();
     this.state = ({
       details: [],
+      cartList: [],
     });
     this.getItemDetais = this.getItemDetais.bind(this);
+    this.addCartItem = this.addCartItem.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +25,18 @@ export default class ProductDetail extends Component {
     });
   }
 
+  addCartItem({ target }) {
+    const cart = localStorage.getItem('cartList');
+    this.setState((ant) => ({
+      cartList: [...ant.cartList, ant],
+    }));
+    if (cart) {
+      localStorage.setItem('cartList', [...cart.split(','), target.value]);
+    } else {
+      localStorage.setItem('cartList', [target.value]);
+    }
+  }
+
   render() {
     const { details } = this.state;
     return (
@@ -32,6 +46,7 @@ export default class ProductDetail extends Component {
         </h1>
         <button
           type="button"
+          value={ details.id }
           data-testid="product-detail-add-to-cart"
           onClick={ this.addCartItem }
         >
