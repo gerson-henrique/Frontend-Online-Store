@@ -52,6 +52,7 @@ export default class ProductDetail extends Component {
     const b = reviewUser ? reviewUser.split(',') : [];
     this.setState({
       coments: a,
+
       emails: b,
     });
   }
@@ -100,11 +101,11 @@ export default class ProductDetail extends Component {
               this.setState({ avaliation: target.value });
             } }
           />
-          <input type="radio" name="rank" id="1" data-testid="1-rating" />
-          <input type="radio" name="rank" id="2" data-testid="2-rating" />
-          <input type="radio" name="rank" id="3" data-testid="3-rating" />
-          <input type="radio" name="rank" id="4" data-testid="4-rating" />
-          <input type="radio" name="rank" id="5" data-testid="5-rating" />
+          <input type="radio" name="rak" id="1" data-testid="1-rating" />
+          <input type="radio" name="rak" id="2" data-testid="2-rating" />
+          <input type="radio" name="rak" id="3" data-testid="3-rating" />
+          <input type="radio" name="rak" id="4" data-testid="4-rating" />
+          <input type="radio" name="rak" id="5" data-testid="5-rating" />
 
           <button
             type="button"
