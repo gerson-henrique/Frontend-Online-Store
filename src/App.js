@@ -16,7 +16,7 @@ class App extends React.Component {
             to="/carrinho"
             id="cartButton"
           >
-            Carrinho
+            Carrinho de Compras
           </Link>
         </div>
         <Route exact path="/" component={ Home } />
